@@ -9,7 +9,7 @@ import java.util.Date;
 @Component
 public class JWTProvider {
     private static final long EXPIRE_TIME = 1000 * 60 * 60L;
-    private static final String KEY = "secretKeyForEnterToCabinet";
+    private static final String KEY = "FazliddinXamdamovPrivateKey";
 
     public String generateToken(String email) {
         Date expireDate = new Date(System.currentTimeMillis() + EXPIRE_TIME);
