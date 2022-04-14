@@ -23,7 +23,7 @@ public class DataLoader implements CommandLineRunner {
 
     private final PriorityRepo priorityRepo;
 
-    @Value("${spring.datasource.initialization-mode}")
+    @Value("${spring.sql.init.mode}")
     private String initialMode;
 
     @Override

@@ -9,6 +9,7 @@ import uz.pdp.clickup.service.AttachmentService;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.FileInputStream;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -29,7 +30,7 @@ public class AttachmentServiceImpl implements AttachmentService {
         Path filePath = root.resolve(fileName).normalize();
 
         try {
-            FileCopyUtils.copy(new FileInputStream(filePath.toString()), response.getOutputStream());
+            FileCopyUtils.copy(Files.newInputStream(Paths.get(filePath.toString())), response.getOutputStream());
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException(e.getMessage());
